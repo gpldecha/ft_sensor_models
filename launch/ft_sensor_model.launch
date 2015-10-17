@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  	
+	<!-- arg -->
+
+	<arg name="parameters" 		value="/home/guillaume/MatlabWorkSpace/plug_sensor_model/Gmm_models"/>
+	<arg name="topic_listen" 	value="/tf_sensor/netft_data"/>
+
+	<!-- launch-prefix="xterm -e gdb -args"-->
+	<node name="ft_sensor_model_node" pkg="ft_sensor_model" type="ft_sensor_model_node"   args="-parameters $(arg parameters) -topic_listen $(arg topic_listen)" required="true" output="screen"/>
+    
+</launch>
